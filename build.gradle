@@ -1,0 +1,29 @@
+group 'com.example.dropwizardsample'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+mainClassName = "com.example.dropwizardsample.DropwizardSampleApplication"
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    dropwizardVersion = '0.8.2'
+}
+
+dependencies {
+    compile (
+            "io.dropwizard:dropwizard-core:$dropwizardVersion"
+    )
+
+    testCompile (
+            "io.dropwizard:dropwizard-testing:$dropwizardVersion",
+            'junit:junit:4.11'
+    )
+}
